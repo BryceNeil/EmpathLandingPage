@@ -52,8 +52,7 @@ export default function Hero() {
         
         <div className="absolute bg-charcoal-800/50 rounded-xl bottom-0 left-0 mx-16 my-8 px-16 py-12 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl uppercase max-w-xs sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-4xl z-10" style={{ backdropFilter: 'blur(40px)' }}>
             {/* <div className="text-white font-normal text-4xl silver-effect"> 
-            A humanoid you can have. Introducing the RX1, a humanoid handmade for you. Available today for
-            pre-order.
+            Noninvasive neurotechnology for mental health.
             </div> */}
             <div className="text-white font-normal text-4xl silver-effect">
                 Introducing RX1: The humanoid platform to embody your AI software. 
