@@ -55,7 +55,7 @@ export default function Hero() {
             Noninvasive neurotechnology for mental health.
             </div> */}
             <div className="text-white font-normal text-4xl silver-effect">
-              Noninvasive neurotechnology for mental health. 
+              Noninvasive neurotechnology for mental health.. 
             </div>
             
             <div className="mt-6">
