@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #f2f2f2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+    --foreground: #f2f2f2;
   }
 }
 
@@ -18,6 +18,7 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 @layer utilities {
@@ -25,3 +26,108 @@ body {
     text-wrap: balance;
   }
 }
+
+.preorder-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid transparent; /* Start with no border */
+  color: rgb(255, 255, 255);
+  padding: 8px 32px 8px 0px; /* Increase padding on the right even more */
+  border-radius: 8px;
+  overflow: hidden;
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.3s ease, border 3.0s ease; /* Increase border transition duration */
+  transition-delay: 0s, 1s; /* Add delay for border transition */
+}
+
+.preorder-button .icon {
+  position: absolute;
+  left: 0px; /* Decreased from 16px to 8px */
+  transition: transform 1.0s ease; /* Increased duration */
+  transition-delay: 1.0s; /* Add delay */
+}
+
+.preorder-button .text {
+  opacity: 0;
+  transition: opacity 1.0s ease; /* Increased duration */
+  transition-delay: 2.0s; /* Add delay */
+}
+
+.preorder-button:hover,
+.preorder-button.active {
+  /* background: rgb(0, 0, 0); */
+  /* border: 1px solid rgb(23, 23, 23); */
+}
+
+.preorder-button:hover .icon,
+.preorder-button.active .icon {
+  transform: translateX(170px);
+  color: rgb(178, 137, 0);
+}
+
+.preorder-button:hover .text,
+.preorder-button.active .text {
+  opacity: 1;
+  margin-left: 0px; /* Adjust as needed */
+  margin-right: 32px;
+  color: rgb(178, 137, 0);
+}
+
+.silver-effect {
+  background: linear-gradient(90deg, #ffffff, #c7c7c7, #a9a9a9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .red-circle {
+  position: absolute;
+  bottom: -30%; 
+  left: -180%; 
+  width: 4800px; 
+  height: 600px; 
+  background: radial-gradient(circle, rgba(255,0,0,0.16) 0%, rgba(255,0,0,0) 70%);
+  filter: blur(50px);
+  pointer-events: none; 
+} */
+
+/* Mobile-specific styles */
+@media (max-width: 640px) {
+  .red-circle {
+    width: 100vw; /* Adjust width for mobile */
+    left: 0; /* Center horizontally for mobile */
+  }
+
+  .preorder-button {
+    padding: 6px 12px; /* Adjust padding for mobile */
+    border-radius: 6px; /* Adjust border-radius for mobile */
+  }
+
+  .preorder-button .icon {
+    left: 4px; /* Adjust icon position for mobile */
+    transition: transform 0.8s ease; /* Adjust transition duration for mobile */
+    transition-delay: 0.8s; /* Adjust delay for mobile */
+  }
+
+  .preorder-button .text {
+    transition: opacity 0.8s ease; /* Adjust transition duration for mobile */
+    transition-delay: 1.6s; /* Adjust delay for mobile */
+  }
+
+  .preorder-button:hover .icon,
+  .preorder-button.active .icon {
+    transform: translateX(138px); /* Adjust transform distance for mobile */
+  }
+
+  .preorder-button:hover .text,
+  .preorder-button.active .text {
+    margin-right: 24px; /* Adjust margin for mobile */
+  }
+}
+
+/* Add this to your globals.css */
+.backdrop-blur-md {
+  backdrop-filter: blur(50px); /* Adjust the blur value as needed */
+}
+

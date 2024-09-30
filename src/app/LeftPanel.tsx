@@ -9,7 +9,11 @@ export default function LeftPanel() {
                     <div>Evolution</div>
                     <div className="-mt-16">Accelerated</div> {/* Adjust the margin as needed */}
                 </div>
-                <div className="ml-12 text-lg">0 - 1</div>
+                <div className=" text-lg">
+                    
+                    0 - 1
+                    
+                    </div>
             </div>
             <div className="flex flex-col mt-4">
                 <div className="flex">
