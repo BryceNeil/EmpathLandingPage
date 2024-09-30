@@ -1,6 +1,4 @@
 import TopPanel from "./TopPanel";
-import LeftPanel from "./LeftPanel";
-import RightPanel from "./RightPanel";
 import Hero from "./Hero";
 import Gallery from "./Gallery";
 

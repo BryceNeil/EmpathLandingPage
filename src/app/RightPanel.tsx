@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image'; // Add this import
 
 export default function RightPanel() {
   const [imageIndex, setImageIndex] = useState(1);
@@ -12,11 +13,13 @@ export default function RightPanel() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]); // Add images.length to the dependency array
+
+  const imageSrc = `/${images[imageIndex - 1]}`;
 
   return (
     <div className="w-1/3 h-full border-t border-charcoal-900 flex flex-col"> {/* Added flex and flex-col */}
-      <img src={`/${images[imageIndex - 1]}`} alt={`Team ${imageIndex}`} className="flex-grow h-full object-cover" /> {/* Added flex-grow */}
+      <Image src={imageSrc} alt={`Team ${imageIndex}`} className="flex-grow h-full object-cover" width={500} height={500} /> {/* Added flex-grow */}
     </div>
   );
 }

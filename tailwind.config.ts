@@ -31,7 +31,7 @@ const config: Config = {
 
       },
       fontWeight: {
-        'medium': 500,
+        'medium': '500', // Changed 500 to '500'
       },
     },
   },

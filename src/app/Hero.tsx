@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Image from 'next/image';
+import { useEffect } from "react";
 
 
 export default function Hero() {
-  const [timeLeft, setTimeLeft] = useState("");
+  // Remove the unused variable
+  // const timeLeft = ...;
 
   useEffect(() => {
     const targetDate = new Date("October 1, 2024 00:00:00").getTime();
@@ -16,16 +16,17 @@ export default function Hero() {
 
       if (distance < 0) {
         clearInterval(countdown);
-        setTimeLeft("The event has started!");
+        // setTimeLeft("The event has started!");
         return;
       }
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      // Remove unused variables
+      // const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      // const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      // const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      // const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
+      // setTimeLeft(`${days}d ${hours}h ${minutes}m ${seconds}s`);
     }, 1000);
 
     return () => clearInterval(countdown);

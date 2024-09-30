@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image'; // Add this import
 
 const images = [
   'Web1.jpg',
@@ -30,21 +31,12 @@ const Gallery: React.FC = () => {
       </div>
      
       <div style={{ display: 'flex', alignItems: 'center', overflow: 'hidden', width: '100%', position: 'relative' }}>
-        <img
-          src={images[(currentIndex - 1 + images.length) % images.length]}
-          alt="Previous"
-          style={{ width: '70%', opacity: 0.5, cursor: 'pointer', position: 'absolute', left: '-60%' }}  // Adjusted width and position
+        <Image src={images[(currentIndex - 1 + images.length) % images.length]} alt="Previous" width={500} height={500} style={{ width: '70%', opacity: 0.5, cursor: 'pointer', position: 'absolute', left: '-60%' }}  // Adjusted width and position
           onClick={handlePrev}
         />
-        <img
-          src={images[currentIndex]}
-          alt="Current"
-          style={{ width: '70%', margin: '0 auto', zIndex: 1 }}  // Adjusted width and centered
+        <Image src={images[currentIndex]} alt="Current" width={500} height={500} style={{ width: '70%', margin: '0 auto', zIndex: 1 }}  // Adjusted width and centered
         />
-        <img
-          src={images[(currentIndex + 1) % images.length]}
-          alt="Next"
-          style={{ width: '70%', opacity: 0.5, cursor: 'pointer', position: 'absolute', right: '-60%' }}  // Adjusted width and position
+        <Image src={images[(currentIndex + 1) % images.length]} alt="Next" width={500} height={500} style={{ width: '70%', opacity: 0.5, cursor: 'pointer', position: 'absolute', right: '-60%' }}  // Adjusted width and position
           onClick={handleNext}
         />
       </div>
