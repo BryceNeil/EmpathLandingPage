@@ -55,7 +55,7 @@ export default function Hero() {
             Noninvasive neurotechnology for mental health.
             </div> */}
             <div className="text-white font-normal text-4xl silver-effect">
-                Introducing RX1: The humanoid platform to embody your AI software. 
+              Noninvasive neurotechnology for mental health. 
             </div>
             
             <div className="mt-6">
